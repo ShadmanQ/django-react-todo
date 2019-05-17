@@ -1,38 +1,43 @@
  // frontend/src/App.js
 
-    import React, { Component } from "react";
-    const todoItems = [
-      {
-        id: 1,
-        title: "Go to Market",
-        description: "Buy ingredients to prepare dinner",
-        completed: true
-      },
-      {
-        id: 2,
-        title: "Study",
-        description: "Read Algebra and History textbook for upcoming test",
-        completed: false
-      },
-      {
-        id: 3,
-        title: "Sally's books",
-        description: "Go to library to rent sally's books",
-        completed: true
-      },
-      {
-        id: 4,
-        title: "Article",
-        description: "Write article on how to use django with react",
-        completed: false
-      }
-    ];
-    class App extends Component {
+import React, { Component } from "react";
+const toDoItems= [
+{
+  id:1,
+  title: "Go To Market",
+  description: "Buy ingredients to prepare dinner",
+  completed: true
+},
+
+{
+  id:2,
+  title: "Study for QA Interview",
+  description: "Specifically look up Selenium",
+  completed: false
+},
+
+{
+  id:3,
+  title: "Watch Game of Thrones",
+  description: "Bran's probably fucking dying",
+  completed: false
+},
+
+{
+  id:4,
+  title: "Work out shoulders",
+  description: "Lateral raises 4 dayszzzzzz",
+  completed: true
+}
+
+];
+
+ class App extends Component {
       constructor(props) {
         super(props);
         this.state = {
           viewCompleted: false,
-          todoList: todoItems
+          todoList: toDoItems
         };
       }
       displayCompleted = status => {
@@ -62,7 +67,7 @@
       renderItems = () => {
         const { viewCompleted } = this.state;
         const newItems = this.state.todoList.filter(
-          item => item.completed === viewCompleted
+          item => item.completed == viewCompleted
         );
         return newItems.map(item => (
           <li
